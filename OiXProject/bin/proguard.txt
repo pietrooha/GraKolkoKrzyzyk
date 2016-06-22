@@ -1,0 +1,39 @@
+# view AndroidManifest.xml #generated:7
+-keep class com.example.oix.OiXActivity { <init>(...); }
+
+# onClick res/layout/main.xml #generated:8
+-keepclassmembers class * { *** clickButton1(...); }
+
+# onClick res/layout/main.xml #generated:90
+-keepclassmembers class * { *** clickButton10(...); }
+
+# onClick res/layout/main.xml #generated:98
+-keepclassmembers class * { *** clickButton11(...); }
+
+# onClick res/layout/main.xml #generated:107
+-keepclassmembers class * { *** clickButton12(...); }
+
+# onClick res/layout/main.xml #generated:18
+-keepclassmembers class * { *** clickButton2(...); }
+
+# onClick res/layout/main.xml #generated:30
+-keepclassmembers class * { *** clickButton3(...); }
+
+# onClick res/layout/main.xml #generated:38
+-keepclassmembers class * { *** clickButton4(...); }
+
+# onClick res/layout/main.xml #generated:46
+-keepclassmembers class * { *** clickButton5(...); }
+
+# onClick res/layout/main.xml #generated:56
+-keepclassmembers class * { *** clickButton6(...); }
+
+# onClick res/layout/main.xml #generated:64
+-keepclassmembers class * { *** clickButton7(...); }
+
+# onClick res/layout/main.xml #generated:72
+-keepclassmembers class * { *** clickButton8(...); }
+
+# onClick res/layout/main.xml #generated:82
+-keepclassmembers class * { *** clickButton9(...); }
+

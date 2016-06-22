@@ -1,0 +1,329 @@
+package com.example.oix;
+
+import android.app.*;
+import android.os.*;
+import android.view.*;
+import android.widget.*;
+import java.util.*;
+
+public class OiXActivity extends Activity {
+  private Button[] elementPlanszy;
+  private boolean X0=false, X1=false, X2=false, X3=false, X4=false, X5=false, X6=false, X7=false, X8=false;
+  private boolean O0=false, O1=false, O2=false, O3=false, O4=false, O5=false, O6=false, O7=false, O8=false;
+  private boolean ruchX=false;
+  private boolean ruchO=true;
+  private boolean kliknal0=false, kliknal1=false, kliknal3=false;
+
+    public void clickButton1(View view) {
+	elementPlanszy = new Button[9];
+//	Toast.makeText(this, "Pierwszy gracz to 'X', drugi to 'O'.", Toast.LENGTH_SHORT).show();
+    }
+
+    public void clickButton2(View view) {
+	bot();
+	ktoWygral();
+    }
+
+    public void clickButton3(View view) {
+	czyjRuch();
+	if(ruchX==true) {
+	  elementPlanszy[0] = (Button) findViewById(R.id.button3);
+	  elementPlanszy[0].setText("X");
+	  elementPlanszy[0].setTextColor(0xffff0000);
+	  elementPlanszy[0].setEnabled(false);
+	  X0=true;
+	}
+	else if(ruchO==true) {
+	  elementPlanszy[0] = (Button) findViewById(R.id.button3);
+	  elementPlanszy[0].setText("O");
+	  elementPlanszy[0].setTextColor(0xff0000ff);
+	  elementPlanszy[0].setEnabled(false);
+	  O0=true;
+	}
+	ktoWygral();
+	kliknal0=true;
+    }
+
+    public void clickButton4(View view) {
+	czyjRuch();
+	if(ruchX==true) {
+	  elementPlanszy[1] = (Button) findViewById(R.id.button4);
+	  elementPlanszy[1].setText("X");
+	  elementPlanszy[1].setTextColor(0xffff0000);
+	  elementPlanszy[1].setEnabled(false);
+	  X1=true;
+	}
+	else if(ruchO==true) {
+	  elementPlanszy[1] = (Button) findViewById(R.id.button4);
+	  elementPlanszy[1].setText("O");
+	  elementPlanszy[1].setTextColor(0xff0000ff);
+	  elementPlanszy[1].setEnabled(false);
+	  O1=true;
+	}
+	ktoWygral();
+	kliknal1=true;
+    }
+
+    public void clickButton5(View view) {
+	czyjRuch();
+	if(ruchX==true) {
+	  elementPlanszy[2] = (Button) findViewById(R.id.button5);
+	  elementPlanszy[2].setText("X");
+	  elementPlanszy[2].setTextColor(0xffff0000);
+	  elementPlanszy[2].setEnabled(false);
+	  X2=true;
+	}
+	else if(ruchO==true) {
+	  elementPlanszy[2] = (Button) findViewById(R.id.button5);
+	  elementPlanszy[2].setText("O");
+	  elementPlanszy[2].setTextColor(0xff0000ff);
+	  elementPlanszy[2].setEnabled(false);
+	  O2=true;
+	}
+	ktoWygral();
+    }
+
+    public void clickButton6(View view) {
+	czyjRuch();
+	if(ruchX==true) {
+	  elementPlanszy[3] = (Button) findViewById(R.id.button6);
+	  elementPlanszy[3].setText("X");
+	  elementPlanszy[3].setTextColor(0xffff0000);
+	  elementPlanszy[3].setEnabled(false);
+	  X3=true;
+	}
+	else if(ruchO==true) {
+	  elementPlanszy[3] = (Button) findViewById(R.id.button6);
+	  elementPlanszy[3].setText("O");
+	  elementPlanszy[3].setTextColor(0xff0000ff);
+	  elementPlanszy[3].setEnabled(false);
+	  O3=true;
+	}
+	ktoWygral();
+	kliknal3=true;
+    }
+
+    public void clickButton7(View view) {
+	czyjRuch();
+	if(ruchX==true) {
+	  elementPlanszy[4] = (Button) findViewById(R.id.button7);
+	  elementPlanszy[4].setText("X");
+	  elementPlanszy[4].setTextColor(0xffff0000);
+	  elementPlanszy[4].setEnabled(false);
+	  X4=true;
+	}
+	else if(ruchO==true) {
+	  elementPlanszy[4] = (Button) findViewById(R.id.button7);
+	  elementPlanszy[4].setText("O");
+	  elementPlanszy[4].setTextColor(0xff0000ff);
+	  elementPlanszy[4].setEnabled(false);
+	  O4=true;
+	}
+	ktoWygral();
+    }
+
+    public void clickButton8(View view) {
+	czyjRuch();
+	if(ruchX==true) {
+	  elementPlanszy[5] = (Button) findViewById(R.id.button8);
+	  elementPlanszy[5].setText("X");
+	  elementPlanszy[5].setTextColor(0xffff0000);
+	  elementPlanszy[5].setEnabled(false);
+	  X5=true;
+	}
+	else if(ruchO==true) {
+	  elementPlanszy[5] = (Button) findViewById(R.id.button8);
+	  elementPlanszy[5].setText("O");
+	  elementPlanszy[5].setTextColor(0xff0000ff);
+	  elementPlanszy[5].setEnabled(false);
+	  O5=true;
+	}
+	ktoWygral();
+    }
+
+    public void clickButton9(View view) {
+	czyjRuch();
+	if(ruchX==true) {
+	  elementPlanszy[6] = (Button) findViewById(R.id.button9);
+	  elementPlanszy[6].setText("X");
+	  elementPlanszy[6].setTextColor(0xffff0000);
+	  elementPlanszy[6].setEnabled(false);
+	  X6=true;
+	}
+	else if(ruchO==true) {
+	  elementPlanszy[6] = (Button) findViewById(R.id.button9);
+	  elementPlanszy[6].setText("O");
+	  elementPlanszy[6].setTextColor(0xff0000ff);
+	  elementPlanszy[6].setEnabled(false);
+	  O6=true;
+	}
+	ktoWygral();
+    }
+
+    public void clickButton10(View view) {
+	czyjRuch();
+	if(ruchX==true) {
+	  elementPlanszy[7] = (Button) findViewById(R.id.button10);
+	  elementPlanszy[7].setText("X");
+	  elementPlanszy[7].setTextColor(0xffff0000);
+	  elementPlanszy[7].setEnabled(false);
+	  X7=true;
+	}
+	else if(ruchO==true) {
+	  elementPlanszy[7] = (Button) findViewById(R.id.button10);
+	  elementPlanszy[7].setText("O");
+	  elementPlanszy[7].setTextColor(0xff0000ff);
+	  elementPlanszy[7].setEnabled(false);
+	  O7=true;
+	}
+	ktoWygral();
+    }
+
+    public void clickButton11(View view) {
+	czyjRuch();
+	if(ruchX==true) {
+	  elementPlanszy[8] = (Button) findViewById(R.id.button11);
+	  elementPlanszy[8].setText("X");
+	  elementPlanszy[8].setTextColor(0xffff0000);
+	  elementPlanszy[8].setEnabled(false);
+	  X8=true;
+	}
+	else if(ruchO==true) {
+	  elementPlanszy[8] = (Button) findViewById(R.id.button11);
+	  elementPlanszy[8].setText("O");
+	  elementPlanszy[8].setTextColor(0xff0000ff);
+	  elementPlanszy[8].setEnabled(false);
+	  O8=true;
+	}
+	ktoWygral();
+    }
+
+    public void clickButton12(View view) {
+	elementPlanszy[0] = (Button) findViewById(R.id.button3);
+	elementPlanszy[0].setText("");
+	elementPlanszy[0].setEnabled(true);
+	elementPlanszy[1] = (Button) findViewById(R.id.button4);
+	elementPlanszy[1].setText("");
+	elementPlanszy[1].setEnabled(true);
+	elementPlanszy[2] = (Button) findViewById(R.id.button5);
+	elementPlanszy[2].setText("");
+	elementPlanszy[2].setEnabled(true);
+	elementPlanszy[3] = (Button) findViewById(R.id.button6);
+	elementPlanszy[3].setText("");
+	elementPlanszy[3].setEnabled(true);
+	elementPlanszy[4] = (Button) findViewById(R.id.button7);
+	elementPlanszy[4].setText("");
+	elementPlanszy[4].setEnabled(true);
+	elementPlanszy[5] = (Button) findViewById(R.id.button8);
+	elementPlanszy[5].setText("");
+	elementPlanszy[5].setEnabled(true);
+	elementPlanszy[6] = (Button) findViewById(R.id.button9);
+	elementPlanszy[6].setText("");
+	elementPlanszy[6].setEnabled(true);
+	elementPlanszy[7] = (Button) findViewById(R.id.button10);
+	elementPlanszy[7].setText("");
+	elementPlanszy[7].setEnabled(true);
+	elementPlanszy[8] = (Button) findViewById(R.id.button11);
+	elementPlanszy[8].setText("");
+	elementPlanszy[8].setEnabled(true);
+	X0=false; X1=false; X2=false; X3=false; X4=false; X5=false; X6=false; X7=false; X8=false;
+	O0=false; O1=false; O2=false; O3=false; O4=false; O5=false; O6=false; O7=false; O8=false;
+    }
+
+    public void czyjRuch() {
+	if(ruchX==true) {
+	  ruchX=false;
+	  ruchO=true;
+	}
+	else if(ruchO==true) {
+	  ruchO=false;
+	  ruchX=true;
+	}
+	else if(ruchX==false) {
+	  ruchX=true;
+	  ruchO=false;
+	}
+	else if(ruchO==false) {
+	  ruchO=true;
+	  ruchX=false;
+	}
+    }
+
+    public void ktoWygral() {
+	if((X0==true && X3==true && X6==true) || (X1==true && X4==true && X7==true) || (X2==true && X5==true && X8==true)) {
+	  Toast.makeText(this, "Wygral X!", Toast.LENGTH_SHORT).show();
+//	  blokowaniePrzyciskow();
+	}
+	else if((X0==true && X1==true && X2==true) || (X3==true && X4==true && X5==true) || (X6==true && X7==true && X8==true)) {
+	  Toast.makeText(this, "Wygral X!", Toast.LENGTH_SHORT).show();
+//	  blokowaniePrzyciskow();
+	}
+	else if((X0==true && X4==true && X8==true) || (X2==true && X4==true && X6==true)) {
+	  Toast.makeText(this, "Wygral X!", Toast.LENGTH_SHORT).show();
+//	  blokowaniePrzyciskow();
+	}
+	else if((O0==true && O3==true && O6==true) || (O1==true && O4==true && O7==true) || (O2==true && O5==true && O8==true)) {
+	  Toast.makeText(this, "Wygralo O!", Toast.LENGTH_SHORT).show();
+//	  blokowaniePrzyciskow();
+	}
+	else if((O0==true && O1==true && O2==true) || (O3==true && O4==true && O5==true) || (O6==true && O7==true && O8==true)) {
+	  Toast.makeText(this, "Wygralo O!", Toast.LENGTH_SHORT).show();
+//	  blokowaniePrzyciskow();
+	}
+	else if((O0==true && O4==true && O8==true) || (O2==true && O4==true && O6==true)) {
+	  Toast.makeText(this, "Wygralo O!", Toast.LENGTH_SHORT).show();
+//	  blokowaniePrzyciskow();
+	}
+    }
+   
+    public void blokowaniePrzyciskow() {
+	for(Button b: elementPlanszy) {
+	  b.setEnabled(false);
+	}
+    }
+
+    public void bot() {
+	if(X0==true) {
+	  elementPlanszy[1] = (Button) findViewById(R.id.button4);
+	  elementPlanszy[1].setText("O");
+	  elementPlanszy[1].setTextColor(0xff0000ff);
+	}
+	else if(X3==true) {
+	  elementPlanszy[4] = (Button) findViewById(R.id.button7);
+	  elementPlanszy[4].setText("O");
+	  elementPlanszy[4].setTextColor(0xff0000ff);
+	}
+	else if(O0==true) {
+	  elementPlanszy[1] = (Button) findViewById(R.id.button4);
+	  elementPlanszy[1].setText("X");
+	  elementPlanszy[1].setTextColor(0xffff0000);
+	}
+	else if(O3==true) {
+	  elementPlanszy[4] = (Button) findViewById(R.id.button7);
+	  elementPlanszy[4].setText("X");
+	  elementPlanszy[4].setTextColor(0xffff0000);
+	}
+	else if(O6==true) {
+	  elementPlanszy[0] = (Button) findViewById(R.id.button3);
+	  elementPlanszy[0].setText("X");
+	  elementPlanszy[0].setTextColor(0xffff0000);
+	}
+	else if(O7==true) {
+	  elementPlanszy[1] = (Button) findViewById(R.id.button4);
+	  elementPlanszy[1].setText("X");
+	  elementPlanszy[1].setTextColor(0xffff0000);
+	}
+	else if(O8==true) {
+	  elementPlanszy[2] = (Button) findViewById(R.id.button5);
+	  elementPlanszy[2].setText("X");
+	  elementPlanszy[2].setTextColor(0xffff0000);
+	}
+    }
+
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.main);
+    }
+}
